@@ -5,6 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My GitHub Page</title>
   <link rel="stylesheet" href="static/styles.css">
+  <style>
+    html, body {
+      height: 100%; /* Ensure full height */
+      margin: 0; /* Remove default margin */
+    }
+
+    body {
+      display: grid;
+      grid-template-rows: 1fr auto; /* 1fr for content and auto for footer */
+      height: 100%;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Optional: For demo purposes */
+    .container {
+      padding: 20px;
+    }
+  </style>
+
 </head>
 <body>
   <div class="container mt-5">
@@ -74,7 +99,7 @@
     </main> -->
     
     <footer>
-      <p>Created by <a href="https://github.com/vns-vijay">Vijay Sharma</a></p>
+      <p>&copy; Created by <a href="https://github.com/vns-vijay">Vijay Sharma</a></p>
     </footer>
   </div>
   
