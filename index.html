@@ -7,22 +7,38 @@
   <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
-  <div class="container">
+  <div class="container mt-5">
     <header>
       <h1 class="text-center mt-5">Welcome to My GitHub Page</h1>
     </header>
 
     <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
-        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="templates/home.html" role="tab" aria-controls="home" aria-selected="true">Home</a>
+        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
       </li>
       <li class="nav-item" role="presentation">
-        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="templates/about.html" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
       </li>
       <li class="nav-item" role="presentation">
-        <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="templates/contact.html" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+        <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
       </li>
     </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <h3>Home Tab Content</h3>
+        <p>This is the content for the Home tab.</p>
+      </div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <h3>Profile Tab Content</h3>
+        <p>This is the content for the Profile tab.</p>
+      </div>
+      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <h3>Contact Tab Content</h3>
+        <p>This is the content for the Contact tab.</p>
+      </div>
+    </div>
 
 
 <!--     <nav>
@@ -33,12 +49,15 @@
       </ul>
     </nav> -->
     
-    <main>
+<!--     <main>
       <p class="text-muted">This is a my website hosted on GitHub Pages. Thanks for visiting!</p>
-    </main>
+    </main> -->
+<!--     <footer>
+      <p>Created by <a href="https://github.com/vns-vijay">Vijay Sharma</a></p>
+    </footer> -->
+  </div>
+</body>
     <footer>
       <p>Created by <a href="https://github.com/vns-vijay">Vijay Sharma</a></p>
     </footer>
-  </div>
-</body>
 </html>
