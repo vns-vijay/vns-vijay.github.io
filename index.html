@@ -35,9 +35,10 @@
 </head>
 <body>
   <div class="container mt-5">
-    <header>
+    <!-- <header>
       <h1 class="text-center mt-5">Hi, Welcome to My GitHub Page</h1>
-    </header>
+    </header> -->
+    <div id="header"></div> <!-- Placeholder for header -->
 
     <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
@@ -80,9 +81,11 @@
       </div>
     </div>
 
-    <footer>
+    <!-- <footer>
       <p>&copy; Created by <a href="https://github.com/vns-vijay">Vijay Sharma</a></p>
-    </footer>
+    </footer> -->
+    <div id="footer"></div> <!-- Placeholder for footer -->
+
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -116,6 +119,20 @@
         loadTabContent(tabId);  // Load the content for the clicked tab
       });
     });
+  </script>
+  <script>
+    // Load the header and footer dynamically
+    document.getElementById("header").innerHTML = fetch('header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById("header").innerHTML = html;
+      });
+
+    document.getElementById("footer").innerHTML = fetch('footer.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById("footer").innerHTML = html;
+      });
   </script>
 </body>
 </html>
