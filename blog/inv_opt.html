@@ -3,28 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A comprehensive guide on Inventory Optimization, 
+                                    EOQ, Inventory Curves, Cost Factors, Reorder Points, 
+                                    Safety Stock Calculation, and the Newsvendor Model.">
     <title>Inventory Optimization</title>
     <link rel="stylesheet" href="../static/styles.css">
+    <style>
+        .section-header {
+            margin-top: 40px;
+            color: #007bff;
+        }
+        code {
+            background-color: #f1f1f1;
+            padding: 5px;
+            border-radius: 4px;
+        }
+    </style>
+
 </head>
 <body>
-    <div id="header"></div> <!-- Placeholder for footer -->
-    TESTING
-    <div id="footer"></div> <!-- Placeholder for footer -->
+<div id="header"></div> <!-- Placeholder for footer -->
+
+<div class="container my-5">
+
+    <section>
+        <h2 class="section-header">What is Inventory Optimization?</h2>
+        <p>Inventory optimization is the process of ensuring that the right amount of stock is available at the right time to meet customer demand without overstocking or understocking. The goal is to minimize costs related to inventory while maximizing service levels.</p>
+        <p>Efficient inventory optimization helps businesses reduce storage costs, avoid stockouts, and improve cash flow.</p>
+    </section>
+
+    <section>
+        <h2 class="section-header">What is Economic Order Quantity (EOQ)?</h2>
+        <p>The Economic Order Quantity (EOQ) is a fundamental concept in inventory management that helps businesses determine the optimal order size that minimizes total inventory costs. The EOQ formula balances ordering costs and holding costs to find the most cost-effective order quantity.</p>
+        <p>The EOQ formula is:</p>
+        <code>EOQ = √((2 * D * S) / H)</code>
+        <p>Where:</p>
+        <ul>
+            <li><strong>D</strong> = Demand rate (units per period)</li>
+            <li><strong>S</strong> = Ordering cost per order</li>
+            <li><strong>H</strong> = Holding cost per unit per period</li>
+        </ul>
+        <p>By calculating EOQ, businesses can optimize the quantity of stock to order and reduce total costs.</p>
+    </section>
+
+    <section>
+        <h2 class="section-header">How Does the Inventory Curve Behave?</h2>
+        <p>The inventory curve represents the levels of stock over time, showing how inventory decreases as sales occur and is replenished as orders are placed. It typically has a sawtooth pattern, with the inventory level dropping during sales and rising after each replenishment order.</p>
+        <p>At the point where inventory is lowest, businesses face the risk of stockouts, while higher levels represent overstocking and unnecessary holding costs.</p>
+    </section>
+
+    <section>
+        <h2 class="section-header">Cost Factors in Inventory Optimization</h2>
+        <p>Inventory optimization involves managing several key costs that affect inventory levels:</p>
+        <ul>
+            <li><strong>Ordering Costs:</strong> Costs incurred each time an order is placed, such as shipping, handling, and administrative costs.</li>
+            <li><strong>Holding Costs:</strong> Costs associated with storing inventory, including storage fees, insurance, and opportunity costs of tying up capital.</li>
+            <li><strong>Stockout Costs:</strong> Costs incurred when inventory runs out, leading to lost sales, customer dissatisfaction, or expedited shipping to replenish stock.</li>
+            <li><strong>Shortage Costs:</strong> Costs related to the inability to meet customer demand due to insufficient inventory.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="section-header">Reorder Point and Safety Stock Calculation</h2>
+        <p>The <strong>Reorder Point (ROP)</strong> is the inventory level at which a new order should be placed to avoid stockouts. It depends on the demand rate and lead time.</p>
+        <p>The formula for ROP is:</p>
+        <code>ROP = Demand rate × Lead time</code>
+        <p>Additionally, safety stock is used to buffer against uncertainty in demand and lead time. The safety stock calculation typically considers the standard deviation of demand and lead time, as well as desired service levels.</p>
+        <p>A common safety stock formula is:</p>
+        <code>Safety Stock = Z × σ(Demand) × √Lead time</code>
+        <p>Where:</p>
+        <ul>
+            <li><strong>Z</strong> = Z-score corresponding to the desired service level</li>
+            <li><strong>σ(Demand)</strong> = Standard deviation of demand</li>
+            <li><strong>Lead time</strong> = Time it takes to receive the order after placing it</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="section-header">Newsvendor Model</h2>
+        <p>The Newsvendor Model is used to optimize inventory in environments with uncertain demand, typically for perishable goods or seasonal products. The model helps determine the optimal order quantity by balancing the costs of overstocking and understocking.</p>
+        <p>The key is to minimize the total cost of inventory by considering both:</p>
+        <ul>
+            <li><strong>Overstocking cost:</strong> The cost incurred when you order more than necessary.</li>
+            <li><strong>Understocking cost:</strong> The cost incurred when you order too little and miss sales opportunities.</li>
+        </ul>
+        <p>The Newsvendor model can be solved using the following formula:</p>
+        <code>Critical ratio (CR) = Cu / (Cu + Co)</code>
+        <p>Where:</p>
+        <ul>
+            <li><strong>Cu</strong> = Underage cost (lost profit from a missed sale)</li>
+            <li><strong>Co</strong> = Overage cost (cost of holding excess inventory)</li>
+        </ul>
+        <p>By determining the critical ratio, you can calculate the optimal order quantity that minimizes total costs.</p>
+    </section>
+
+</div>
+
+
+<div id="footer"></div> <!-- Placeholder for footer -->
     
 
-    <script>
-        // Load the header and footer dynamically
-        document.getElementById("header").innerHTML = fetch('../header.html')
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById("header").innerHTML = html;
-        });
+<script>
+    // Load the header and footer dynamically
+    document.getElementById("header").innerHTML = fetch('../header.html')
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById("header").innerHTML = html;
+    });
 
-        document.getElementById("footer").innerHTML = fetch('../footer.html')
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById("footer").innerHTML = html;
-        });
-    </script>
+    document.getElementById("footer").innerHTML = fetch('../footer.html')
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById("footer").innerHTML = html;
+    });
+</script>
 </body>
 </html>
+
