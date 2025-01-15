@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quantum and Classical Information</title>
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,6 +32,20 @@
             margin-top: 20px;
             margin-bottom: 10px;
         }
+
+        .note {
+            background-color: #fef7c6;
+            border-left: 4px solid #f9c74f;
+            padding: 10px;
+            margin: 20px 0;
+        }
+
+        .example {
+            background-color: #e9ecef;
+            border-left: 4px solid #007bff;
+            padding: 10px;
+            margin: 20px 0;
+        }
     </style>
 </head>
 
@@ -42,80 +56,112 @@
         <!-- Dirac Notation Section -->
         <div class="content-section">
             <h2 class="section-title">Dirac Notation</h2>
-            <p>In quantum mechanics, <b>Dirac notation</b> (also called <b>bra-ket notation</b>) is a standard way to represent quantum states. A quantum state can be written as a vector, denoted by a "ket," for example, <code>|ψ⟩</code>. The conjugate transpose of a ket is called a "bra," and is denoted <code>⟨ψ|</code>.</p>
-            <p>For example, the inner product of two states <code>|φ⟩</code> and <code>|ψ⟩</code> is written as <code>⟨φ|ψ⟩</code>. An outer product of two states is written as <code>|φ⟩⟨ψ|</code>.</p>
+            <p>In quantum mechanics, <b>Dirac notation</b> (also called <b>bra-ket notation</b>) is a convenient and concise way to express quantum states and operators. Quantum states are typically represented as vectors in a complex vector space, and Dirac notation provides a shorthand for these representations.</p>
+            
+            <div class="note">
+                <p><b>Note:</b> The term "bra" refers to a row vector, and "ket" refers to a column vector. The inner product between two states is written as <code>⟨φ|ψ⟩</code>, and the outer product as <code>|φ⟩⟨ψ|</code>.</p>
+            </div>
+            
+            <p>For example, the state <code>|ψ⟩</code> is a ket representing a quantum state, and <code>⟨ψ|</code> is the corresponding bra. A quantum state can be written as a linear combination (or superposition) of basis states. For a qubit, a general state <code>|ψ⟩</code> in the 2-dimensional Hilbert space can be written as:</p>
+            <pre><code>|ψ⟩ = α|0⟩ + β|1⟩</code></pre>
+            <p>Here, <code>α</code> and <code>β</code> are complex coefficients, and <code>|0⟩</code> and <code>|1⟩</code> are the computational basis states of the qubit.</p>
+            
+            <h3>Inner and Outer Products</h3>
+            <p>The <b>inner product</b> of two quantum states <code>|ψ⟩</code> and <code>|φ⟩</code> is written as:</p>
+            <pre><code>⟨ψ|φ⟩</code></pre>
+            <p>This represents the probability amplitude for transitioning from state <code>|φ⟩</code> to <code>|ψ⟩</code>. It is a complex number, and its magnitude squared gives the probability of observing the state <code>|ψ⟩</code> when the system is in state <code>|φ⟩</code>.</p>
+            
+            <h3>Outer Product</h3>
+            <p>The <b>outer product</b> of two states <code>|ψ⟩</code> and <code>|φ⟩</code> is written as:</p>
+            <pre><code>|ψ⟩⟨φ|</code></pre>
+            <p>This produces a matrix, which can be used to represent an operator acting on a quantum state.</p>
         </div>
 
         <!-- Classical Information Section -->
         <div class="content-section">
             <h2 class="section-title">Classical Information</h2>
 
-            <!-- Stochastic Matrix -->
-            <div>
-                <h3>Stochastic Matrix</h3>
-                <p>A <b>stochastic matrix</b> is a square matrix used to describe the transitions of a Markov chain. Each of its rows represents a probability distribution over the possible next states.</p>
-                <pre><code>
-P = [p₁₁ p₁₂ p₁₃ ...]
-    [p₂₁ p₂₂ p₂₃ ...]
-    [p₃₁ p₃₂ p₃₃ ...]
-    ...
-                </code></pre>
-                <p>Here, the elements <code>pᵢⱼ</code> represent the transition probabilities from state <code>i</code> to state <code>j</code>. All entries in each row must be non-negative, and the sum of entries in each row must equal 1.</p>
+            <h3>Stochastic Matrix</h3>
+            <p>A <b>stochastic matrix</b> is a square matrix used to describe transitions in a system, where each element represents the probability of transitioning from one state to another. It is often used in Markov chains and other probabilistic models.</p>
+            <p>Each row of the matrix must sum to 1, as it represents the probability distribution of the next state given the current state. For example, a 3x3 stochastic matrix might look like this:</p>
+            <pre><code>
+P = [0.5  0.2  0.3]
+    [0.4  0.4  0.2]
+    [0.3  0.3  0.4]
+            </code></pre>
+            <p>In this matrix, the first row indicates that the probability of transitioning from state 1 to state 1 is 0.5, to state 2 is 0.2, and to state 3 is 0.3.</p>
+
+            <div class="note">
+                <p><b>Note:</b> Stochastic matrices are often used to model systems that evolve in discrete time steps, where the state of the system depends probabilistically on its previous state.</p>
             </div>
 
-            <!-- Standard Basis -->
-            <div>
-                <h3>Standard Basis</h3>
-                <p>The <b>standard basis</b> in classical information is the set of unit vectors that form a basis for the vector space. For example, in a 2-dimensional vector space, the standard basis is <code>e₁ = (1, 0)</code> and <code>e₂ = (0, 1)</code>.</p>
-            </div>
+            <h3>Standard Basis</h3>
+            <p>The <b>standard basis</b> refers to a set of vectors that are used as building blocks for vector spaces. In classical information, the standard basis vectors in an <i>n</i>-dimensional vector space are represented as <code>e₁ = (1, 0, 0, ..., 0)</code>, <code>e₂ = (0, 1, 0, ..., 0)</code>, and so on.</p>
+            <p>In a 2-dimensional space, the standard basis consists of the following two vectors:</p>
+            <pre><code>
+e₁ = [1, 0]
+e₂ = [0, 1]
+            </code></pre>
+            <p>Any vector in this space can be written as a linear combination of <code>e₁</code> and <code>e₂</code>.</p>
         </div>
 
         <!-- Quantum Information Section -->
         <div class="content-section">
             <h2 class="section-title">Quantum Information</h2>
 
-            <!-- Unitary Matrix -->
-            <div>
-                <h3>Unitary Matrix</h3>
-                <p>A <b>unitary matrix</b> is a square matrix <code>U</code> that satisfies <code>U†U = UU† = I</code>, where <code>U†</code> is the conjugate transpose of <code>U</code>, and <code>I</code> is the identity matrix. Unitary matrices represent quantum operations and preserve the length of vectors (norms).</p>
-                <pre><code>
-U = [u₁₁ u₁₂]
-    [u₂₁ u₂₂]
-                </code></pre>
-            </div>
+            <h3>Unitary Matrix</h3>
+            <p>A <b>unitary matrix</b> is a matrix that represents a quantum operation. It is a square matrix <code>U</code> that satisfies the condition:</p>
+            <pre><code>U†U = UU† = I</code></pre>
+            <p>Here, <code>U†</code> is the conjugate transpose of <code>U</code>, and <code>I</code> is the identity matrix. Unitary matrices preserve the norm of a quantum state, meaning that the probability of all possible outcomes of a quantum measurement sums to 1.</p>
 
-            <!-- Standard Basis Measurement -->
-            <div>
-                <h3>Standard Basis Measurement</h3>
-                <p>In quantum mechanics, the standard basis measurement involves measuring a quantum state in the computational basis. For a qubit, the standard basis is <code>|0⟩</code> and <code>|1⟩</code>. The measurement probabilities are determined by the square of the amplitudes of the quantum state.</p>
-                <pre><code>
-|ψ⟩ = α|0⟩ + β|1⟩
-Measurement in the standard basis:
-P(0) = |α|², P(1) = |β|²
-                </code></pre>
-            </div>
-
-            <!-- Quantum Operations -->
-            <div>
-                <h3>Quantum Operations</h3>
-                <p>In quantum computing, quantum operations are represented by matrices. Some well-known quantum operations include:</p>
-                <ul>
-                    <li><b>Pauli Gates</b>: These include <code>σₓ</code> (Pauli-X), <code>σᵧ</code> (Pauli-Y), and <code>σ𝓏</code> (Pauli-Z) gates, which are basic operations that flip or rotate quantum bits (qubits).</li>
-                    <li><b>Phase Gate</b>: The phase gate applies a phase of <code>e^(iθ)</code> to the qubit.</li>
-                    <li><b>Hadamard Gate</b>: The Hadamard gate creates superposition states by mapping <code>|0⟩</code> to <code>(|0⟩ + |1⟩)/√2</code> and <code>|1⟩</code> to <code>(|0⟩ - |1⟩)/√2</code>.</li>
-                </ul>
-                <p>Here are the matrix representations of the Pauli matrices:</p>
+            <div class="example">
+                <p><b>Example:</b> The Pauli-X gate, also known as the bit-flip gate, is a 2x2 unitary matrix:</p>
                 <pre><code>
 σₓ = [0  1]
      [1  0]
-
-σᵧ = [0  -i]
-     [i   0]
-
-σ𝓏 = [1  0]
-     [0 -1]
                 </code></pre>
+                <p>This gate flips the state of a qubit: it maps <code>|0⟩</code> to <code>|1⟩</code> and vice versa.</p>
             </div>
+
+            <h3>Standard Basis Measurement</h3>
+            <p>In quantum mechanics, when we measure a quantum state in the computational basis, we project the state onto one of the basis states. For a qubit, the computational basis is <code>|0⟩</code> and <code>|1⟩</code>.</p>
+            <p>If a qubit is in a state <code>|ψ⟩ = α|0⟩ + β|1⟩</code>, the probability of measuring the state <code>|0⟩</code> is given by <code>|α|²</code>, and the probability of measuring <code>|1⟩</code> is <code>|β|²</code>.</p>
+            
+            <div class="example">
+                <p><b>Example:</b> Consider the state <code>|ψ⟩ = (1/√2)(|0⟩ + |1⟩)</code>. The probability of measuring <code>|0⟩</code> is:</p>
+                <pre><code>P(0) = |1/√2|² = 1/2</code></pre>
+                <p>Similarly, the probability of measuring <code>|1⟩</code> is:</p>
+                <pre><code>P(1) = |1/√2|² = 1/2</code></pre>
+            </div>
+
+            <h3>Quantum Operations</h3>
+            <p>Quantum operations are transformations that manipulate quantum states. These are typically represented by unitary matrices. Some important quantum operations include:</p>
+            <ul>
+                <li><b>Pauli Gates</b>: These are a set of 2x2 matrices that perform bit-flipping and phase-flipping operations. The three Pauli gates are:
+                    <ul>
+                        <li><code>σₓ</code> (Pauli-X): Flips the state of a qubit.</li>
+                        <li><code>σᵧ</code> (Pauli-Y): Introduces a phase flip along with a bit flip.</li>
+                        <li><code>σ𝓏</code> (Pauli-Z): Flips the phase of the qubit without changing its state.</li>
+                    </ul>
+                </li>
+                <li><b>Phase Gates</b>: A phase gate applies a phase factor to the quantum state. For example, the phase gate <code>R(θ)</code> applies a phase of <code>e^(iθ)</code> to the state of a qubit.</li>
+                <li><b>Hadamard Gate</b>: The Hadamard gate creates a superposition state. It maps the computational basis states to the following:
+                    <ul>
+                        <li><code>|0⟩ → (|0⟩ + |1⟩)/√2</code></li>
+                        <li><code>|1⟩ → (|0⟩ - |1⟩)/√2</code></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="example">
+                <p><b>Example:</b> The matrix representation of the Pauli-X gate is:</p>
+                <pre><code>
+σₓ = [0  1]
+     [1  0]
+                </code></pre>
+                <p>Applying this gate to the state <code>|0⟩</code> will flip it to <code>|1⟩</code>, and vice versa.</p>
+            </div>
+
         </div>
 
     </div>
