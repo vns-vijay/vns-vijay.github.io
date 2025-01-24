@@ -48,7 +48,7 @@
             <li><strong>H</strong> = Holding cost per unit per period</li>
         </ul>
         <p>This formula is obtained by minimizing total cost which includes ordering cost \(\frac{D}{Q}*O\) and inventory holding cost \(\frac{Q}{2}*H\). 
-            When we add them and take derivative w.r.t. \(Q\) and equates to zero we will get the value of \(Q\) which is basically \(E0Q\) </p>
+            When we add them and take derivative w.r.t. \(Q\) and equates to zero we will get the value of \(Q\) which is basically \(EOQ\) </p>
 
         <p>The assumption in deriving the above formuala is as follows: </p>
         <ul>
@@ -61,7 +61,7 @@
     </section>
 
     <section>
-        <h2 class="section-header">How Does the Inventory Curve Behave?</h2>
+        <h2 class="section-header">Inventory Curve</h2>
         <p>The inventory curve represents the levels of stock over time, showing how inventory decreases 
             as sales occur and is replenished as orders are placed. It typically has a sawtooth pattern, 
             with the inventory level dropping during sales and rising after each replenishment order.</p>
@@ -85,14 +85,24 @@
         <p>The <strong>Reorder Point (ROP)</strong> is the inventory level at which a new order should be placed to avoid stockouts. It depends on the demand rate and lead time.</p>
         <p>The formula for ROP is:</p>
         <code>ROP = Demand rate × Lead time</code>
-        <p>Additionally, safety stock is used to buffer against uncertainty in demand and lead time. The safety stock calculation typically considers the standard deviation of demand and lead time, as well as desired service levels.</p>
+        <p>Since in practical scenarios, we don't have linear demand curve, we need to add a buffer amount to redorder point 
+            so that an uncertainty in demand is catered and stockout is minimized. This buffer quantity is called <strong> Safety Stock</strong>
+        </p>
+        <!-- <p>Additionally, safety stock is used to buffer against uncertainty in demand and lead time. 
+            The safety stock calculation typically considers 
+            the standard deviation of demand and lead time, as well as desired service levels.</p> -->
         <p>A common safety stock formula is:</p>
-        <code>Safety Stock = Z × σ(Demand) × √Lead time</code>
+        <p>
+            \[
+                SS = Z*\sigma_{d}*\sqrt{L}
+            \]
+        </p>
+        <!-- <code>Safety Stock = Z × σ(Demand) × √Lead time</code> -->
         <p>Where:</p>
         <ul>
-            <li><strong>Z</strong> = Z-score corresponding to the desired service level</li>
-            <li><strong>σ(Demand)</strong> = Standard deviation of demand</li>
-            <li><strong>Lead time</strong> = Time it takes to receive the order after placing it</li>
+            <li><strong>\(Z\)</strong> = Z-score corresponding to the desired service level; 1.62 for 95%</li>
+            <li><strong>\(\sigma_{d}\)</strong> = Standard deviation of daily demand</li>
+            <li><strong>\(L\)</strong> = Lead time in days</li>
         </ul>
     </section>
 
