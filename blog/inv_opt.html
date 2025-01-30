@@ -92,8 +92,8 @@
          </p>
          <p>Where:</p>
          <ul>
-            <li><strong>\(\mu_d\)</strong> = daily avearage demand</li>
-            <li><strong>\(L\)</strong> = Lead time in days</li>
+            <li><strong>\(\mu_d\): </strong>daily avearage demand</li>
+            <li><strong>\(L\): </strong>Lead time in days</li>
          </ul>
         <p>Since in practical scenarios, we don't have linear demand curve, we need to add a buffer amount to redorder point 
             so that an uncertainty in demand is catered and stockout is minimized. This buffer quantity is called <strong> Safety Stock</strong>
@@ -110,9 +110,9 @@
         <!-- <code>Safety Stock = Z × σ(Demand) × √Lead time</code> -->
         <p>Where:</p>
         <ul>
-            <li><strong>\(Z\)</strong> = Z-score corresponding to the desired service level; 1.62 for 95%</li>
-            <li><strong>\(\sigma_{d}\)</strong> = Standard deviation of daily demand</li>
-            <li><strong>\(L\)</strong> = Lead time in days</li>
+            <li><strong>\(Z\): </strong> Z-score corresponding to the desired service level; 1.62 for 95%</li>
+            <li><strong>\(\sigma_{d}\): </strong>Standard deviation of daily demand</li>
+            <li><strong>\(L\): </strong>Lead time in days</li>
         </ul>
     </section>
 
@@ -138,19 +138,27 @@
                     <li>Increased Supplier Cost (Cost difference between primary and secondary suppliers) </li>
                 </ul>
         </ul>
-        <p>The Newsvendor model can be solved using the following formula:</p>
+        <p>The Newsvendor model can be solved using the following formula as <strong>Critical Ratio (CR)</strong>:</p>
         <!-- <code>Critical ratio (CR) = Cu / (Cu + Co)</code> -->
          <p>
             \[
                 CR = \frac{C_u}{C_u + C_o} 
             \]
          </p>
+        <p>By determining the critical ratio, we can calculate the optimal order quantity as follows.</p>
+        <p>
+            \[
+                Q = \mu + Z_{CR}*\sigma
+            \]
+        </p>
         <p>Where:</p>
         <ul>
-            <li><strong>Cu</strong> = Underage cost (lost profit from a missed sale)</li>
-            <li><strong>Co</strong> =  (cost of holding excess inventory)</li>
+            <li><strong>\(Q\): </strong>Optimal order quantity</li>
+            <li><strong>\(\mu\): </strong>Average daily demand</li>
+            <li><strong>\(\Z_{CR}\): </strong>Z-score corresponding to the critical ratio (desired service level); 1.62 for CR=0.95</li>
+            <li><strong>\(\sigma\): </strong>Standard deviation of daily demand</li>
+            
         </ul>
-        <p>By determining the critical ratio, you can calculate the optimal order quantity that minimizes total costs.</p>
     </section>
 
 </div>
