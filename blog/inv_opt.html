@@ -124,8 +124,19 @@
             The model helps determine the optimal order quantity by balancing the costs of overstocking and understocking.</p>
         <p>The key is to minimize the total cost of inventory by considering both:</p>
         <ul>
-            <li><strong>Overstocking cost:</strong> The cost incurred when you order more than necessary.</li>
-            <li><strong>Understocking cost:</strong> The cost incurred when you order too little and miss sales opportunities.</li>
+            <li><strong>Overstocking cost / Overage cost (\(C_o\)):</strong> The cost incurred when you order more than necessary.</li>
+                <ul>
+                    <li>Salvage Value </li>
+                    <li>Inventory Holding Cost</li>
+                    <li>Opportunity Cost</li>
+                </ul>
+            <li><strong>Understocking cost / Underage cost (\(C_u\)):</strong> The cost incurred when you order too little 
+                and miss sales opportunities. This Cost is difficult to calculate.</li>
+                <ul>
+                    <li>Goodwill cost</li>
+                    <li>Expedite Cost (fee paid to get product sooner)</li>
+                    <li>Increased Supplier Cost (Cost difference between primary and secondary suppliers) </li>
+                </ul>
         </ul>
         <p>The Newsvendor model can be solved using the following formula:</p>
         <!-- <code>Critical ratio (CR) = Cu / (Cu + Co)</code> -->
@@ -137,7 +148,7 @@
         <p>Where:</p>
         <ul>
             <li><strong>Cu</strong> = Underage cost (lost profit from a missed sale)</li>
-            <li><strong>Co</strong> = Overage cost (cost of holding excess inventory)</li>
+            <li><strong>Co</strong> =  (cost of holding excess inventory)</li>
         </ul>
         <p>By determining the critical ratio, you can calculate the optimal order quantity that minimizes total costs.</p>
     </section>
