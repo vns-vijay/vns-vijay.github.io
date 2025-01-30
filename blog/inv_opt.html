@@ -84,7 +84,17 @@
         <h2 class="section-header">Reorder Point and Safety Stock Calculation</h2>
         <p>The <strong>Reorder Point (ROP)</strong> is the inventory level at which a new order should be placed to avoid stockouts. It depends on the demand rate and lead time.</p>
         <p>The formula for ROP is:</p>
-        <code>ROP = Demand rate × Lead time</code>
+        <!-- <code>ROP = Demand rate × Lead time</code> -->
+         <p>
+            \[
+                ROP = \mu_d*L
+            \]
+         </p>
+         <p>Where:</p>
+         <ul>
+            <li><strong>\(\mu_d\)</strong> = daily avearage demand</li>
+            <li><strong>\(L\)</strong> = Lead time in days</li>
+         </ul>
         <p>Since in practical scenarios, we don't have linear demand curve, we need to add a buffer amount to redorder point 
             so that an uncertainty in demand is catered and stockout is minimized. This buffer quantity is called <strong> Safety Stock</strong>
         </p>
