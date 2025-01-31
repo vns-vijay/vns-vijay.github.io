@@ -161,8 +161,9 @@
         </ul>
         <p>Let's implement this formula to calculate optimal order quantity.</p>
         <section>
-            <p><strong>Data:</strong>We generate data to be used to calculate the optimial quantity to order using Newsvendor model </p>
-            <table>
+            <h3 class="section-header">Data Preparation</h3>
+            <p><strong>Given Data:</strong>We generate sample data to be used to calculate the optimial quantity to order using Newsvendor model </p>
+            <table border="1">
                 <thead>
                     <tr>
                         <th>Day</th>
@@ -212,19 +213,42 @@
                     </tr>
                 </tbody>
             </table>
+            <p>Let's assume the following:</p>
+            <p>Revenue \(r = 150\) </p>
+            <p>Cost per unit \(c = 80\) </p>
+            <p>Salvage value \(b = 50\) </p>
+            
+
+        </section>
+        <section>
+            <h3 class="section-header">Calculations</h3>
+            <p>Now, understock cost will be calculated as \(C_u = r-c\) and overstocking cost will be \(C_o = c-b\).
+               Critical ratio will become 
+               \[
+                CR = \frac{r-c}{r-c + c-b} = \frac{r-c}{r-b} = \frac{70}{100} = 0.7
+               \]         
+            </p>
+            <p>Average daily demand and standard deviation will be calculated by following formula</p>
+            <p>
+                \[
+                    \mu = \frac{\sum_i{d_i}}{N} = \frac{80+120+110+90+130+100+115+105+125+95}{10} = 107
+                \]
+            </p>
+            <p>
+                \[
+                    \sigma = \sqrt{\frac{\sum_i{(d_i - \mu)^2}}{N-1}} = 14.19
+                \]
+            </p>
+            <p>
+                Now the optimal order can be calculated as follows:
+                \[
+                    Q = 107 + Z_{0.7}*14.19 = 107 + 0.524*14.19 = 114.43
+                \]
+            </p>
         </section>
     </section>
 
 </div>
-<!-- 2	120
-3	110
-4	90
-5	130
-6	100
-7	115
-8	105
-9	125
-10	95 -->
 
 <div id="footer"></div> <!-- Placeholder for footer -->
     
